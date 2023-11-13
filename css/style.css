@@ -1,0 +1,198 @@
+/* we do for pseudo element, because after and before are not affected by * alone. */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Familjen Grotesk', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Header /Navbar */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* set width to 100%  to go all the way accross */
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  height: 100px;
+  padding: 0 30px;
+}
+
+.logo {
+  width: 210px;
+  height: auto;
+}
+.logo img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+/* Header /Navbar */
+
+/* Desktop menu */
+.desktop-main-menu {
+  margin-right: 50px;
+}
+.desktop-main-menu ul {
+  display: flex;
+}
+.desktop-main-menu ul li {
+  position: relative;
+  margin-right: 20px;
+  padding-bottom: 2px;
+}
+/* Menu Item border */
+.desktop-main-menu ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: right center;
+}
+
+.desktop-main-menu ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition-duration: 0.4s;
+}
+
+/* Desktop menu */
+
+/* Sections */
+section {
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.section-inner {
+  position: absolute;
+  bottom: 200px;
+  left: 150px;
+  max-width: 560px;
+}
+
+.section-inner h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+.section-inner h2 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.5s ease-in-out 0.2s;
+  /* Stop from shwoing at the start of the animation */
+  animation-fill-mode: both;
+}
+
+/* Background Images */
+.section-a {
+  background-image: url('/img/section-a.webp');
+}
+
+.section-inner a {
+  animation-fill-mode: both;
+  animation: fadeInUp 0.5s ease-in-out 0.4s;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  min-width: 130px;
+  padding: 15px 50px;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  /* we dont wanr hover to come out of container */
+  overflow: hidden;
+  z-index: 3;
+}
+.btn:hover span {
+  color: wheat;
+}
+
+.btn .hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
+}
+
+.btn:hover .hover {
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Scroll-arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeBounce 3s infinite;
+}
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeBounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  45% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
