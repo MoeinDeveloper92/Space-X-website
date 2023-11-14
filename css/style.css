@@ -120,6 +120,21 @@ section {
 .section-a {
   background-image: url('/img/section-a.webp');
 }
+.section-b {
+  background-image: url('/img/section-b.webp');
+}
+.section-c {
+  background-image: url('/img/section-c.webp');
+}
+.section-d {
+  background-image: url('/img/section-d.webp');
+}
+.section-e {
+  background-image: url('/img/section-e.webp');
+}
+.section-f {
+  background-image: url('/img/section-f.webp');
+}
 
 .section-inner a {
   animation-fill-mode: both;
@@ -142,7 +157,7 @@ section {
   z-index: 3;
 }
 .btn:hover span {
-  color: wheat;
+  color: black;
 }
 
 .btn .hover {
@@ -170,7 +185,213 @@ section {
   transform: translate(-50%, -50%);
   animation: fadeBounce 3s infinite;
 }
+
+/* Footer */
+footer {
+  position: relative;
+  padding: 50px 0;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer ul li {
+  margin-right: 30px;
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 2.5;
+}
+
+footer ul li a:hover {
+  color: #aaa;
+}
+footer ul li a {
+  color: #fff;
+  transition: color 0.6s;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  position: fixed;
+  top: 40px;
+  right: 20px;
+  z-index: 10;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+.hamburger-middle {
+  transform: translateY(5px);
+  transition: transform 0.5s ease-in-out;
+}
+.hamburger-bottom {
+  transform: translateY(10px);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* OverLay */
+.overlay-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+/* Transiton hamburger to X when it opens */
+.open {
+  transform: rotate(90deg);
+}
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+  transition: transform 0.5s ease-in-out;
+}
+.open .hamburger-middle {
+  display: none;
+}
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Stop Scrolling */
+.stop-scrolling {
+  overflow: hidden;
+}
+
+/* Hide Mobile Meue items */
+
+/* Show Mobile Ite,ms */
+.mobile-only {
+  display: none;
+}
+
+/* Mobile Menu */
+.mobile-main-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100vh;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.2, 0.22);
+}
+/* Bring Menu From Riught */
+.show-menu {
+  transform: translateX(0);
+}
+.mobile-main-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  padding: 50px;
+  width: 100%;
+}
+
+.mobile-main-menu ul li {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-bottom: 1px gray dotted;
+  width: 100%;
+  text-align: right;
+  padding-bottom: 10px;
+}
+.mobile-main-menu ul li a {
+  color: #fff;
+  transition: color 0.6s;
+}
+.mobile-main-menu a:hover {
+  color: #aaa;
+}
+
+/* FAlcon9 Styles */
+/* inner PAges */
+.bg-falcon-9 {
+  background-image: url('/img/falcon-9.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.section-animate {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.section-inner-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+.section-inner-center h3 {
+  font-size: 100px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.4s ease-in-out;
+}
+.section-inner-center p {
+  animation: fadeInUp 0.4s ease-in-out 0.2s;
+  animation-fill-mode: both;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.stats div span {
+  font-size: 160px;
+}
+.stats div h4 {
+  font-size: 24px;
+  font-weight: 300;
+}
+/* FAlcon9 Styles */
+
 /* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -194,5 +415,41 @@ section {
   45% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+/* Respionsiveness */
+@media (max-width: 960px) {
+  /* Hide Desktop Menue */
+  .desktop-main-menu {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-inner {
+    bottom: 75px;
+    left: 20px;
+  }
+  .section-inner h2 {
+    font-size: 30px;
+  }
+  footer ul li:first-child {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  footer ul {
+    padding-left: 25px;
+  }
+  footer ul li {
+    margin-right: 10px;
+  }
+  .logo {
+    width: 150px;
+    margin: auto;
   }
 }
